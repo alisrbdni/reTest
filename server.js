@@ -9,7 +9,7 @@ var responseBody1,responseBody2,resStr='';
        //loop through between range provided by first api 
        for(var i=obj.lower;i<obj.upper+1;i++){
          resStr+=(i!=0?i+':':'');
-         //for each key value in respond of second api array loop to find devisible devisors of i
+         //for each key value in respond of second api array loop to find divisible divisors of i
        for(var z=0;z<obj2.outputDetails.length;z++){
          
         (i!=0 && i % (obj2.outputDetails[z].divisor) == 0)?resStr+=obj2.outputDetails[z].output:''  
