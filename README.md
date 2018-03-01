@@ -1,6 +1,6 @@
 To install the app clone or download this repositorty by running
 ```
-git clone https://github.com/alisrbdni/apiTest.git
+git clone https://github.com/alisrbdni/reTest.git
 
 ```
 then run:
