@@ -6,7 +6,7 @@ git clone https://github.com/alisrbdni/reTest.git
 then run:
 
 ```
-cd apiTest
+cd reTest
 npm install
 npm start
 ```
