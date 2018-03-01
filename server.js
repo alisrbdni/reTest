@@ -2,7 +2,7 @@ var request = require('request');
 const express = require('express')
 const app = express()
 var async = require('async');
-var responseBody1,responseBody2,resStr='',count=0;
+var responseBody1,responseBody2,resStr='';
      function checkIfDevisible(results){
       obj = results[0];
       obj2 = results[1];
