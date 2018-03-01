@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 var async = require('async');
 var responseBody1,responseBody2,resStr='';
-     function checkIfDevisible(results){
+     function checkIfDivisible(results){
       obj = results[0];
       obj2 = results[1];
        //loop through between range provided by first api 
@@ -49,11 +49,11 @@ app.get('/', (req, res) => {
         },
       ],
       /*
-       * calling checkIfDevisible as logic and sending resStr as response 
+       * calling checkIfDivisible as logic and sending resStr as response 
        */
       function(err, results) {
         if(err) { console.log(err); res.send(500,"Server Error"); return; }
-        checkIfDevisible(results);
+        checkIfDivisible(results);
         res.send(resStr);
         resStr ='';
       }
