@@ -2,7 +2,7 @@ var request = require('request');
 const express = require('express')
 const app = express()
 var async = require('async');
-var responseBody1,responseBody2,resStr='';
+var resStr='';
      function checkIfDivisible(results){
       obj = results[0];
       obj2 = results[1];
