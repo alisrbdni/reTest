@@ -1,11 +1,9 @@
 var request = require('request');
 const express = require('express')
 const app = express()
-    
-
-function checkIfDevisible(results){
-
-
+var async = require('async');
+var responseBody1,responseBody2,resStr='',count=0;
+     function checkIfDevisible(results){
       obj = results[0];
       obj2 = results[1];
        //loop through between range provided by first api 
@@ -22,11 +20,11 @@ function checkIfDevisible(results){
    
 
 app.get('/', (req, res) => {
-//using async.parallel to call both
-//and return results as array
+//using async parallel to run both funcs with callbacks 
+//and store in results arr
       async.parallel([
         /*
-         * range Api
+         * range API
          */
         function(callback) {
           var url = "https://join.reckon.com/test1/rangeInfo";
@@ -38,7 +36,7 @@ app.get('/', (req, res) => {
           });
         },
         /*
-         * divisor Api
+         * divisor API
          */
         function(callback) {
           var url = "https://join.reckon.com/test1/divisorInfo";
@@ -50,7 +48,9 @@ app.get('/', (req, res) => {
           });
         },
       ],
-     //returning resStr after logic is called as res and emptying resStr
+      /*
+       * calling checkIfDevisible as logic and sending resStr as response 
+       */
       function(err, results) {
         if(err) { console.log(err); res.send(500,"Server Error"); return; }
         checkIfDevisible(results);
@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
         resStr ='';
       }
       );
- 
+    // }
   
   })
 
